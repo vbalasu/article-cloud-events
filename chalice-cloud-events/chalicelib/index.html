@@ -1,0 +1,25 @@
+<h1>CloudEvents: The Beating Heart of Serverless and Multicloud</h1>
+<label for="object">Choose a picture (jpeg image):</label>
+<input type="file" id="object" name="object" accept="image/jpeg">
+<br><img id="myobject" width="200px">
+<script>
+inputElement = document.getElementById("object");
+inputElement.addEventListener("change", handleFiles, false);
+function handleFiles() {
+  selectedFile = document.getElementById('object').files[0];
+  reader = new FileReader()
+  reader.onload = (e) => {document.getElementById('myobject').setAttribute('src', e.target.result)}
+  reader.readAsDataURL(selectedFile)
+}
+
+
+
+let socket = new WebSocket("wss://56iu4n0cf7.execute-api.us-east-1.amazonaws.com/api/");
+socket.onopen = function(e) {
+  console.log("Sending to server");
+  socket.send("My name is John");
+};
+socket.onmessage = function(event) {
+  console.log(`[message] Data received from server: ${event.data}`);
+};
+</script>

@@ -1,0 +1,57 @@
+{
+  "resources": [
+    {
+      "name": "handle_object_created_role",
+      "resource_type": "iam_role",
+      "role_arn": "arn:aws:iam::251566558623:role/chalice-cloud-events-dev-handle_object_created",
+      "role_name": "chalice-cloud-events-dev-handle_object_created"
+    },
+    {
+      "name": "handle_object_created",
+      "resource_type": "lambda_function",
+      "lambda_arn": "arn:aws:lambda:us-east-1:251566558623:function:chalice-cloud-events-dev-handle_object_created"
+    },
+    {
+      "name": "handle_object_created-s3event",
+      "resource_type": "s3_event",
+      "bucket": "cloudmatica",
+      "lambda_arn": "arn:aws:lambda:us-east-1:251566558623:function:chalice-cloud-events-dev-handle_object_created"
+    },
+    {
+      "name": "api_handler_role",
+      "resource_type": "iam_role",
+      "role_arn": "arn:aws:iam::251566558623:role/chalice-cloud-events-dev-api_handler",
+      "role_name": "chalice-cloud-events-dev-api_handler"
+    },
+    {
+      "name": "api_handler",
+      "resource_type": "lambda_function",
+      "lambda_arn": "arn:aws:lambda:us-east-1:251566558623:function:chalice-cloud-events-dev"
+    },
+    {
+      "name": "rest_api",
+      "resource_type": "rest_api",
+      "rest_api_id": "3namtoz6z6",
+      "rest_api_url": "https://3namtoz6z6.execute-api.us-east-1.amazonaws.com/api/"
+    },
+    {
+      "name": "websocket_message_role",
+      "resource_type": "iam_role",
+      "role_arn": "arn:aws:iam::251566558623:role/chalice-cloud-events-dev-websocket_message",
+      "role_name": "chalice-cloud-events-dev-websocket_message"
+    },
+    {
+      "name": "websocket_message",
+      "resource_type": "lambda_function",
+      "lambda_arn": "arn:aws:lambda:us-east-1:251566558623:function:chalice-cloud-events-dev-websocket_message"
+    },
+    {
+      "name": "websocket_api",
+      "resource_type": "websocket_api",
+      "websocket_api_url": "wss://56iu4n0cf7.execute-api.us-east-1.amazonaws.com/api/",
+      "websocket_api_id": "56iu4n0cf7"
+    }
+  ],
+  "schema_version": "2.0",
+  "backend": "api"
+}
